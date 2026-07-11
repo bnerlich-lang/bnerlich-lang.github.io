@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brigitte Nerlich — Anthologies</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --bg: #f8f7f3;
+    --surface: #ffffff;
+    --ink: #1a2e1c;
+    --mid: #3d5c40;
+    --muted: #6b826e;
+    --accent: #2d6a4f;
+    --accent-light: #e8f0e9;
+    --rule: #d4ddd5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+  .site-header a { color: #b7d9c3; text-decoration: none; }
+
+  .page-header {
+    padding: 2.6rem 1.5rem 1.8rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .page-header h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .page-header h1 span { display: block; font-weight: 400; font-style: italic; }
+  .page-header .byline {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+  }
+  .page-header .byline a { color: var(--accent); text-decoration: none; }
+  .page-header .tagline {
+    font-size: 0.95rem;
+    color: var(--mid);
+    margin-top: 1rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.9rem;
+    max-width: 620px;
+  }
+
+  /* ── MAIN ── */
+  .layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .background {
+    margin-bottom: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .background p {
+    font-size: 0.92rem;
+    color: var(--mid);
+    margin-bottom: 0.75rem;
+    max-width: 640px;
+  }
+  .background p:last-child { margin-bottom: 0; }
+  .background a { color: var(--accent); }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── ANTHOLOGY CARDS ── */
+  .anthologies {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 1.6rem 1.8rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 18px rgba(45, 106, 79, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .card-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-family: 'Lora', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .card-desc {
+    font-size: 0.92rem;
+    color: var(--mid);
+    line-height: 1.65;
+    margin-bottom: 0.9rem;
+    max-width: 640px;
+  }
+
+  .card-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .card-link::after {
+    content: '→';
+    transition: transform 0.15s;
+  }
+  .card:hover .card-link::after {
+    transform: translateX(3px);
+  }
+
+  /* ── ABOUT / OUTLOOK ── */
+  .outlook {
+    background: var(--ink);
+    color: #d8ead9;
+    border-radius: 5px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 1rem;
+  }
+  .outlook h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #9dcbaa;
+    margin-bottom: 0.8rem;
+  }
+  .outlook p {
+    font-size: 0.88rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.65;
+  }
+  .outlook p:last-child { margin-bottom: 0; }
+  .outlook a { color: #9dcbaa; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    margin-top: 2rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (min-width: 640px) {
+    .anthologies { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  Making Science Public &nbsp;·&nbsp; <a href="https://makingsciencepublic.com">makingsciencepublic.com</a>
+</div>
+
+<div class="page-header">
+  <h1>Reading Guides &amp; Anthologies<span>Language, metaphor and the making of science, technology and public life</span></h1>
+  <p class="byline"><a href="https://makingsciencepublic.com/about/">Brigitte Nerlich</a>, Emeritus Professor, University of Nottingham</p>
+  <p class="tagline">Three collections of blog posts, sorted by theme, tracing how metaphor and language shape public understanding of AI, synthetic biology and climate change.</p>
+</div>
+
+<div class="layout">
+
+  <div class="background">
+    <p>Since 2012 I have used the <a href="https://makingsciencepublic.com">Making Science Public</a> blog to track the words we reach for when talking about science and technology &#8212; and what those words quietly do to the way we think.</p>
+    <p>The three anthologies below gather that work by theme rather than by date. Each stands alone; together they trace a couple of decades of watching language catch up with &#8212; or run ahead of &#8212; the science itself.</p>
+  </div>
+
+  <div class="section-label">Collections</div>
+
+  <div class="anthologies">
+
+    <a class="card" href="https://bnerlich-lang.github.io/ai-metaphor-anthology/">
+      <div class="card-eyebrow">Anthology One</div>
+      <div class="card-title">AI Metaphor Anthology</div>
+      <div class="card-desc">On the language of artificial intelligence &#8212; ghosts, minds, mirrors, tools and agents &#8212; and how the metaphors we choose for AI shape what we think it is, what it can do, and who is responsible when it acts.</div>
+      <div class="card-link">Visit the anthology</div>
+    </a>
+
+    <a class="card" href="https://bnerlich-lang.github.io/synbio-anthology/">
+      <div class="card-eyebrow">Anthology Two</div>
+      <div class="card-title">Synthetic Biology Anthology</div>
+      <div class="card-desc">On the language of engineering life &#8212; circuits, chassis, blueprints and code &#8212; and how metaphors borrowed from computing and industry have framed synthetic biology as a field of design rather than discovery.</div>
+      <div class="card-link">Visit the anthology</div>
+    </a>
+
+    <a class="card" href="https://bnerlich-lang.github.io/climate-change-anthology/">
+      <div class="card-eyebrow">Anthology Three</div>
+      <div class="card-title">Climate Change Anthology</div>
+      <div class="card-desc">On the language of a warming world &#8212; cliffs, tipping points, heat domes and carbon bombs &#8212; drawn from blog posts written between 2012 and 2026 tracking climate language, politics, culture and extreme weather.</div>
+      <div class="card-link">Visit the anthology</div>
+    </a>
+
+  </div>
+
+  <div class="outlook">
+    <h2>About this site</h2>
+    <p>Each anthology is compiled from posts on <a href="https://makingsciencepublic.com">Making Science Public</a>, organised by theme so that readers can follow a thread of thought rather than a chronology.</p>
+  </div>
+
+</div><!-- /layout -->
+
+<footer>
+  Making Science Public &nbsp;&mdash;&nbsp; <a href="https://makingsciencepublic.com">makingsciencepublic.com</a> &nbsp;&mdash;&nbsp; Compiled 2026
+</footer>
+
+</body>
+</html>
